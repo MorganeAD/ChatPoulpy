@@ -5,7 +5,7 @@ Character.octocat = love.graphics.newImage("octocat.png")
 
 function Character:initialize()
     self.yspeed = 0
-    self.y = 480 - 56
+    self.y = 480 - 64
     self.gravity = 1200
 
     self.xspeed = 0
@@ -19,8 +19,8 @@ function Character:update(dt)
     self.y = self.y + self.yspeed * dt
 
     -- collision avec le sol
-    if self.y >= 480 - 56/2 then
-        self.y = 480 - 56/2 -- correction du delta
+    if self.y >= 480 - 64/2 then
+        self.y = 480 - 64/2 -- correction du delta
         self.yspeed = -650 -- saut
     end
 
@@ -39,7 +39,7 @@ function Character:update(dt)
 end
 
 function Character:draw()
-    love.graphics.draw(Character.octocat, self.x    , self.y, 0, 1, 1, 64/2, 56/2)
-    love.graphics.draw(Character.octocat, self.x-320, self.y, 0, 1, 1, 64/2, 56/2)
-    love.graphics.draw(Character.octocat, self.x+320, self.y, 0, 1, 1, 64/2, 56/2)
+    love.graphics.draw(Character.octocat, self.x    , self.y, 0, 1, 1, 64/2, 64/2)
+    love.graphics.draw(Character.octocat, self.x-320, self.y, 0, 1, 1, 64/2, 64/2)
+    love.graphics.draw(Character.octocat, self.x+320, self.y, 0, 1, 1, 64/2, 64/2)
 end
