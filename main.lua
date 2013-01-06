@@ -1,32 +1,31 @@
 require 'middleclass'
 require 'character'
+require 'plateform'
 
 function love.load()
     love.graphics.setBackgroundColor(156, 218, 241)
-    --love.sensor.enable("TYPE_ALL")
-    --nn = 'aaa'
-    --tt = 'aaa'
+    love.sensor.enable("TYPE_ACCELEROMETER")
+    acc = 0
     c1 = Character:new()
-    c2 = Character:new()
+    p1 = Plateform:new(100, 100)
+    p2 = Plateform:new(250, 250)
+    p3 = Plateform:new(200, 400)
 end
 
 function love.update(dt)
     c1:update(dt)
-    c2:update(dt)
+    p1:update(dt)
+    p2:update(dt)
+    p3:update(dt)
 end
 
 function love.sensorchanged(n,t,v)
-    --nn = n
-    --tt = t
-    --print(n, t)
-    --for index, val in pairs(v) do
-    --  print(index, "->", val)
-    --end
+    acc = -tonumber(v[1])
 end
 
 function love.draw()
-    --love.graphics.print(nn, 20, 20)
-    --love.graphics.print(tt, 20, 40)
+    p1:draw()
+    p2:draw()
+    p3:draw()
     c1:draw()
-    c2:draw()
 end
