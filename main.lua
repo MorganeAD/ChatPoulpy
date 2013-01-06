@@ -25,7 +25,7 @@ end
 
 function love.draw()
     love.graphics.push()
-    love.graphics.translate(0, - c1.y + 120*3)
+    love.graphics.translate(0, - c1.y + 480/2)
     p1:draw()
     p2:draw()
     p3:draw()

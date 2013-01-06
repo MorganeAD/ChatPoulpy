@@ -6,6 +6,7 @@ Character.octocat = love.graphics.newImage("octocat.png")
 function Character:initialize()
     self.yspeed = 0
     self.y = 480 - 64
+    self.yspeedmax = 650
     self.gravity = 1200
 
     self.xspeed = 0
@@ -16,6 +17,7 @@ end
 function Character:update(dt)
     -- gravité et vitesse sur Y
     self.yspeed = self.yspeed + self.gravity * dt
+    if self.yspeed > self.yspeedmax then self.yspeed = self.yspeedmax end
     self.y = self.y + self.yspeed * dt
 
     -- collision avec le sol
