@@ -24,14 +24,15 @@ function Character:update(dt)
         self.yspeed = -650 -- saut
     end
 
-    --if love.keyboard.isDown("left") then
-    --    if self.xspeed > -self.xspeedmax then self.xspeed = self.xspeed - 10 end
-    --elseif love.keyboard.isDown("right") then
-    --    if self.xspeed <  self.xspeedmax then self.xspeed = self.xspeed + 10 end
-    --else
-    --    self.xspeed = self.xspeed / 1.05
-    --end
-    self.xspeed = acc * 150
+    if love.keyboard.isDown("left") then
+        if self.xspeed > -self.xspeedmax then self.xspeed = self.xspeed - 10 end
+    elseif love.keyboard.isDown("right") then
+        if self.xspeed <  self.xspeedmax then self.xspeed = self.xspeed + 10 end
+    else
+        self.xspeed = self.xspeed / 1.05
+    end
+
+    --self.xspeed = acc * 150
     self.x = self.x + self.xspeed * dt
 
     -- infini sur x
