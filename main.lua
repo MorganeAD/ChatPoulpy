@@ -1,11 +1,13 @@
 require 'middleclass'
 require 'character'
 require 'plateform'
+require 'camera'
 
 function love.load()
     love.graphics.setBackgroundColor(156, 218, 241)
     --love.sensor.enable("TYPE_ACCELEROMETER")
     --acc = 0
+    camera = Camera:new()
     c1 = Character:new()
     p1 = Plateform:new(100, 100)
     p2 = Plateform:new(250, 250)
@@ -24,12 +26,10 @@ function love.sensorchanged(n,t,v)
 end
 
 function love.draw()
-    love.graphics.push()
-    love.graphics.translate(0, - c1.y + 480/2)
+    camera:set()
     p1:draw()
     p2:draw()
     p3:draw()
     c1:draw()
-   love.graphics.pop()
-
+    camera:unset()
 end
