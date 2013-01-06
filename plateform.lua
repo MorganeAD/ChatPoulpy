@@ -9,9 +9,9 @@ function Plateform:initialize(x, y)
 end
 
 function Plateform:update(dt)
-    if c1.y > self.y - 64/2 - 5 and c1.y < self.y - 64/2 + 5 and c1.yspeed > 0 and c1.x > self.x - 35  and c1.x < self.x + 35 then
-        c1.y = self.y - 64/2-- correction du delta
-        c1.yspeed = -650 -- saut
+    if c.y > self.y - 64/2 - 5 and c.y < self.y - 64/2 + 5 and c.yspeed > 0 and c.x > self.x - 35  and c.x < self.x + 35 then
+        c.y = self.y - 64/2-- correction du delta
+        c.yspeed = -650 -- saut
     end
 end
 

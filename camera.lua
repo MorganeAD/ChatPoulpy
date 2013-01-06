@@ -11,7 +11,7 @@ end
 
 function Camera:set()
     love.graphics.push()
-    love.graphics.translate(0, - c1.y + 480/2)
+    love.graphics.translate(0, - c.y + 480/2)
 end
 
 function Camera:unset()
