@@ -27,7 +27,8 @@ function love.update(dt)
     camera:update(dt)
     for _, p in pairs(plateforms) do
         p:update(dt)
-    end    
+    end
+    
 end
 
 function birth()
@@ -49,4 +50,6 @@ function love.draw()
     end
     c:draw()
     camera:unset()
+
+    love.graphics.print(-camera.y + 480/2, 10, 10)
 end
