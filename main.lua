@@ -8,23 +8,19 @@ function love.load()
     --love.sensor.enable("TYPE_ACCELEROMETER")
     --acc = 0
     c = Character:new()
-    camera = Camera:new()    
+    camera = Camera:new()
 
     plateforms = {}
-
-    for i = 1, 20 do
-        for j = 1, 10 do
-            table.insert(plateforms, Plateform:new(math.random(0 + 50, 320 - 50),math.random(480, -480)))
-        end
-    end
-
-    --table.insert(plateforms, Plateform:new(100, 100))
-    --table.insert(plateforms, Plateform:new(250, 250))
-    --table.insert(plateforms, Plateform:new(200, 400))
+    
+    for i = 1, 1000 do
+        x = math.random(0, 20)
+        if x >= 3 and x <= 20 then table.insert(plateforms, Plateform:new(math.random(0 + 50, 320 - 50), - i*30 + 480)) end
+    end    
 
 end
 
 function love.update(dt)
+
 
     c:update(dt)
     camera:update(dt)
