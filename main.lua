@@ -4,8 +4,10 @@
     require 'camera'
      
     function love.load()
-        love.graphics.setBackgroundColor(156, 218, 241)
-        love.sensor.enable("TYPE_ACCELEROMETER")
+        love.graphics.setBackgroundColor(30, 0, 70)
+        background1 = love.graphics.newImage("background1.png")
+        background2 = love.graphics.newImage("background2.png")
+        --love.sensor.enable("TYPE_ACCELEROMETER")
         --acc = 0
         c = Character:new()
         camera = Camera:new()
@@ -47,6 +49,8 @@
     --end
      
     function love.draw()
+        love.graphics.draw(background1,0,0)
+        love.graphics.draw(background2,0,0)
         camera:set()
         for _, p in pairs(plateforms) do
             p:draw()
